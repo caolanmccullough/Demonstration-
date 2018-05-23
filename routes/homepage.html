@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Interactive Classroom Tool</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Interactive Classroom Tool</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav nav-tabs navbar-right">
+
+        <li class="active"><a data-toggle="tab" href="#dashboard" >Dashboard</a></li>
+        <li><a data-toggle="tab" href="#poll">Poll</a></li>
+        <li><a data-toggle="tab" href="#results">Poll Results</a></li>
+        <li><a data-toggle="tab" href="#aqaTab">AQA</a></li>
+        <li><a data-toggle="tab" href="#profile">Profile</a></li>
+        <li><a href="/logout">Sign Out</a></li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="tab-content">
+<!-- First Container - Dashboard -->
+<div class="container-fluid main-container text-center tab-pane fade in active" id="dashboard">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <h1 class="margin">Interactive Classroom Tool</h1>
+    <h3 class="margin">"ICT is an interactive classroom tool which will improve participation, concentration levels and help gauge levels of understanding by providing an enjoyable experience for both Students and Teachers."</h3>
+    <h3> - Newry Democrat</h3>
+    <br><br>
+          </div>
+    <div class="col-sm-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+            <img src="./imgs/Services/poll.png" alt="pollAvatar" class="avatar">
+            <p class="lead"> Polling</p>
+            <p class="info">Engage your audience by providing real-time polling to energise your classroom.</p>
+    </div>
+    <div class="col-sm-4">
+      <img src="./imgs/Services/question.png" alt="aqaAvatar" class="avatar">
+            <p class="lead">Ask Questions Annomyously</p>
+            <p class="info">Provide 100% participation by giving every student the oppurtinity to ask questions.</p>
+    </div>
+    <div class="col-sm-4">
+      <img src="./imgs/Services/profile.png" alt="feedbackAvatar" class="avatar">
+            <p class="lead">View Profile</p>
+            <p class="info">Able to view account information. </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Second Container = Creating Poll -->
+<div class="container-fluid main-container text-center tab-pane fade" id="poll">
+  <h2>Polling Section</h3>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <form action="/pollQuestion" method="POST" class="form-group">
+        <label><b>Enter Poll Title:</b></label>
+        <input type="text" placeholder="Enter title of poll.." name="pollTitle" class="form-control">
+        <label><b>Enter Question Title:</b></label>
+  <input type="text" placeholder="Enter title of question.." name="questionTitle" class="form-control">
+  <button type="submitPoll">Submit</button>
+</form>
+     <!--  <form action= method="post" action="/">
+<div class="form-group">
+  <label><b>Enter Poll Title:</b></label>
+      <input type="text" placeholder="Enter Poll Title..." name="pollTitle" class="form-control">
+ </div>    
+ <div class="form-group">
+  <label><b>Enter Question:</b></label>
+      <input type="text" placeholder="Enter Question..." name="questionTitle" class="form-control">
+ </div>       
+ <div class="form-group">
+  <label><b>Answer 1:</b></label>
+      <input type="text" placeholder="Enter Answer 1..." name="answer1" class="form-control">
+ </div>       
+ <div class="form-group">
+  <label><b>Answer 2:</b></label>
+      <input type="text" placeholder="Enter Answer 2 ..." name="answer2" class="form-control">
+ </div>  
+ <div class="form-group">
+  <label><b>Answer 3:</b></label>
+      <input type="text" placeholder="Enter Answer 3..." name="answer3" class="form-control">
+ </div>               
+
+  
+      <div class="createPoll">
+          <button type="button" class="createPollButton" id="createPollButton">Create Poll</button>
+      </div> -->
+</div>
+
+    <div class="col-sm-4"></div>
+  </div>
+</div>
+
+<!-- Third Container = Poll Results -->
+<div class="container tab-pane fade in" id="results">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+  <h1>Software Engineering Management</h1>
+    <p>Do you feel a revision class would be beneficial before the test?</p>
+    <form id="votingForm">
+        <p>
+          <input type="radio" name="answer" id="yes" value="yes">
+          <label for="yes">Yes</label>
+        </p>
+        <p>
+        <input type="radio" name="answer" id="no" value="no">
+        <label for="no">No</label>
+      </p>
+      <p>
+        <input type="radio" name="answer" id="unsure" value="unsure">
+        <label for="unsure">Unsure</label>
+      </p>
+        <input type="submit" name="Vote" class="btn" value="Submit Vote">
+      </form>
+    <br><br><br>
+    <h2 style="text-align: center" id="pieChartTitle"></h2>
+    <div id="pieChartContainer" style="height: 300px; width:200px"></div>
+  </div>
+  <div class="col-sm-3"></div>
+  </div>
+
+<!-- Fourth Container = AQA -->
+<div class="container-fluid main-container-2 text-center tab-pane fade" id="aqaTab">
+
+            <div class="col-sm-3"></div>
+             <div class="col-sm-6">
+                <h1 class="text-center">
+                    Ask Questions Annoymously
+                </h1>
+                <div id="status"></div>
+                <div id="aqa">
+                    <br>
+                    <div>
+                        <ul class="aqaChat">
+
+                    </ul>
+                    </div>
+                    <br>
+                    <div id="userMessage">
+                    <textarea id="aqaComment" class="form-control" rows="3"></textarea>
+                </div>
+                    <span class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12" style="margin-top: 10px">
+                        <button class="btn btn-success btn-lg btn-block" id="submitComment">Send</button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-3"></div>
+    </div>
+
+<!-- Fifth Container = Profile -->
+<div class="container-fluid main-container-2 text-center tab-pane fade" id="profile">
+        <div class="row">
+            <div class="col-md-2"></div>
+             <div class="col-md-8 offset-md-3 col-sm-12">
+               <div class="viewProfile">
+                <button class="btn btn-danger btn-lg btn-block" id="button1">View Profile</button>
+                    <p2>
+                        Name:
+                    </p2>
+                </div>                    
+              
+                 </div>
+                </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="container-footer footer-default text-center">
+
+        <p>&copy; 2018 Ulster University.</p>
+      </footer>
+              
+
+<!-- Clears comments when user clicks of page -->
+<!-- Remove if you want comments to remain-->
+<script id="new-comment-other" type="text/template">
+    <li class="left clearfix">
+        <div class="aqaChat-body clearfix">
+            <p>
+                {{body}}
+            </p>
+        </div>
+    </li>
+</script>
+
+<script id="new-comment" type="text/template">
+    <li id="{{id}}" class="right clearfix">
+        <div class="aqaChat-body clearfix">
+            <p>
+                {{body}}
+            </p>
+        </div>
+    </li>
+</script>
+
+
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/4.2.2/pusher.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+    <script src="main.js"></script>
+    <script src="chat.js"></script>
+        <script src="profile.js"></script>
+          <script src="practise.js"></script>  
+
+
+
+
+</body>
+</html>

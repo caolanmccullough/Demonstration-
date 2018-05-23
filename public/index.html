@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Interactive Classroom Tool</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Interactive Classroom Tool</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav nav-tabs navbar-right">
+        <li class="active"><a data-toggle="tab" href="#dashboard" >Dash board</a></li>
+        <li><a data-toggle="tab" href="#register">Register</a></li>
+        <li><a data-toggle="tab" href="#logIn">Log In</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="tab-content">
+<!-- First Container = Dashboard -->
+<div class="container-fluid main-container text-center tab-pane fade in active" id="dashboard">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+      <h1 class="margin">Interactive Classroom Tool</h1>
+    <h3 class="margin">"ICT is an interactive classroom tool which will improve participation, concentration levels and help gauge levels of understanding by providing an enjoyable experience for both Students and Teachers. "</h3>
+    <br><br><br><br>
+          </div>
+    <div class="col-sm-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+            <img src="./imgs/Services/poll.png" alt="pollAvatar" class="avatar">
+            <p class="lead"> Polling</p>
+            <p class="info">Engage your audience by providing real-time polling to energise your classroom.</p>
+    </div>
+    <div class="col-sm-4">
+      <img src="./imgs/Services/question.png" alt="aqaAvatar" class="avatar">
+            <p class="lead">Ask Questions Annomyously</p>
+            <p class="info">Provide 100% participation by giving every student the oppurtinity to ask questions.</p>
+    </div>
+    <div class="col-sm-4">
+      <img src="./imgs/Services/profile.png" alt="feedbackAvatar" class="avatar">
+            <p class="lead">View Profile</p>
+            <p class="info">Able to view account information. </p>
+    </div>
+  </div>
+</div>
+
+<!-- Second Container = Registration -->
+<div class="container-fluid main-container text-center tab-pane fade tab-content" id="register">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <!-- Using tabs within a tab section. Can choose between tabs register-teacher and register-student -->
+      <div class="teacherStudentChoice">
+         <ul class="nav nav-tabs nav-stacked nav-justified">
+         <li class="active"><a data-toggle="tab" href="#register-student">Student</a></li>
+         <li><a data-toggle="tab" href="#register-teacher">Teacher</a></li>
+         </ul>
+      </div>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+
+   <!-- Register-teacher tab within Register-->
+    <div id="register-teacher" class="tab-pane fade">
+      <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+  
+<div class="form-group">
+    <form method="post" action="/">
+   <h2> Teacher Account Register </h2>
+  <label><b>Name</b></label>
+      <input type="text" placeholder="Enter Name..." name="name" class="form-control">
+ </div>
+ <div class="form-group">
+  <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username..." name="username" class="form-control">
+ </div>
+<div class="form-group">
+  <label><b>Email</b></label>
+      <input type="email" placeholder="Enter email..." name="email" class="form-control">
+ </div>
+ <div class="form-group">
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password..." name="password" class="form-control">
+ </div>
+ <div class="form-group">
+      <label><b>Password Confirmation</b></label>
+      <input type="password" placeholder="Enter Password..." name="password2" class="form-control">
+ </div>
+        <p>
+          <input type="radio" name="teacherAccount" id="teacherAccount" value="teacherAccount">
+          <label for="teacherAccount">Please check box to confirm you are a Teacher</label>
+        </p>
+ <button type="submit" class=" btn btn-default">Submit</button>
+ </form>
+  </div>
+    <div class="col-sm-2"></div>
+  </div>
+    </div>
+
+    <!-- Register-teacher tab within Register-->
+    <div id="register-student" class="tab-pane fade in active">
+      <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+  
+<div class="form-group">
+    <form method="post" action="/">
+   <h2> Student Account Register </h2>
+  <label><b>Name</b></label>
+      <input type="text" placeholder="Enter Name..." name="name" class="form-control">
+ </div>
+ <div class="form-group">
+  <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username..." name="username" class="form-control">
+ </div>
+<div class="form-group">
+  <label><b>Email</b></label>
+      <input type="email" placeholder="Enter email..." name="email" class="form-control">
+ </div>
+ <div class="form-group">
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password..." name="password" class="form-control">
+ </div>
+ <div class="form-group">
+      <label><b>Password Confirmation</b></label>
+      <input type="password" placeholder="Enter Password..." name="password2" class="form-control">
+ </div>
+ <p>
+          <input type="radio" name="studentAccount" id="studentAccount" value="studentAccount">
+          <label for="studentAccount">Please check box to confirm you are a Student</label>
+        </p>
+ <button type="submit" class=" btn btn-default">Submit</button>
+ </form>
+  </div>
+    <div class="col-sm-2"></div>
+  </div>
+    </div>
+  </div>
+
+<!-- Third Container = Log In -->
+<div class="container-fluid main-container text-center tab-pane fade tab-content" id="logIn">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+            <!-- Using tabs within a tab section. Can choose between tabs logIn-teacher and logIn-student -->
+      <div class="teacherStudentChoice">
+  <ul class="nav nav-tabs nav-stacked nav-justified">
+    <li class="active"><a data-toggle="tab" href="#logIn-student">Student</a></li>
+    <li><a data-toggle="tab" href="#logIn-teacher">Teacher</a></li>
+  </ul>
+</div>
+</div>
+<div class="col-sm-2"></div>
+</div>
+<div class="tab-content extra">
+     <!-- LogIn-Teacher tab within Log In-->
+
+    <div id="logIn-teacher" class="tab-pane fade">
+      <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+  <div class="loginBox">
+    <img src="./imgs/Avatars/teacherAvatar.png" class="AvatarUser">
+    <h2>Teacher Log In</h2>
+    <form method="post" action="/">
+      <p>Email</p>
+      <input type="text" name="logemail" placeholder="Enter Email Address">
+      <p>Password</p>
+      <input type="password" name="logpassword" placeholder="********">
+      <input type="submit" name="" value="Sign In">
+    </form>
+    </div>
+  </div>
+    <div class="col-sm-4"></div>
+  </div>
+  </div>
+  <!-- LogIn-Student tab within Log In -->
+  <div id="logIn-Student" class="tab-pane fade in active">
+      <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+  <div class="loginBox">
+    <img src="./imgs/Avatars/studentAvatar.png" class="AvatarUser">
+    <h2>Student Log In</h2>
+    <form method="post" action="/">
+      <p>Email</p>
+      <input type="text" name="logemail" placeholder="Enter Email Address">
+      <p>Password</p>
+      <input type="password" name="logpassword" placeholder="********">
+      <input type="submit" name="" value="Sign In">
+    </form>
+    </div>
+  </div>
+    <div class="col-sm-4"></div>
+  </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Footer -->
+<footer class="container-footer footer-default text-center">
+
+        <p>&copy; 2018 Ulster University.</p>
+      </footer>
+    
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/4.2.2/pusher.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+     <script src="chat.js"></script>   
+     <script src="profile.js"></script>   
+     <script src="main.js"></script>  
+
+</body>
+</html>
